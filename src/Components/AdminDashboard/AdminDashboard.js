@@ -20,43 +20,56 @@ const AdminDashboard = () => {
             </button>
           </div>
         </div>
+        <div className="p-b-32" />
         <div className="data-content">
           <div className="data-content-left">
             <h6 style={{ color: '#cda84c' }}>APPLICATION INFO</h6>
-            <br></br>
-            <div className='left'>
-              <div className="left1">
+            <div className="p-b-16" />
+            <div className="left1">
+              <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Billboard Location</p>
-                <p style={{ fontWeight: "bold" }}>Billboard ID</p>
-                <p style={{ fontWeight: "bold" }}>Application Date</p>
-                <p style={{ fontWeight: "bold" }}>Period</p>
-                <p style={{ fontWeight: "bold" }}>Application status</p>
-              </div>
-              <div className="left2">
                 <p style={{ color: "#d2d2d2" }}>Gishushu</p>
+              </div>
+              <div className="left1-row">
+                <p style={{ fontWeight: "bold" }}>Billboard ID</p>
                 <p style={{ color: "#d2d2d2" }}>KG-00012-G</p>
+              </div>
+              <div className="left1-row">
+                <p style={{ fontWeight: "bold" }}>Application Date</p>
                 <p style={{ color: "#d2d2d2" }}>14 Feb 2021</p>
+              </div>
+              <div className="left1-row">
+                <p style={{ fontWeight: "bold" }}>Period</p>
                 <p style={{ color: "#d2d2d2" }}>28 Feb 2021 - 28 May 2021</p>
+              </div>
+              <div className="left1-row">
+                <p style={{ fontWeight: "bold" }}>Application status</p>
                 <p style={{ color: "#d2d2d2" }}>PENDING</p>
               </div>
             </div>
+            <div className="p-b-32" />
             <h6 style={{ color: '#cda84c' }}>PAYMENT STATUS</h6>
-            <div className='left'>
-              <div className="left1">
+            <div className="p-b-16" />
+            <div className="left1">
+              <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>To be paid</p>
-                <p style={{ fontWeight: "bold" }}>Amount paid</p>
-                <p style={{ fontWeight: "bold" }}>Remaining</p>
+                <p style={{ color: "#d2d2d2" }}>300,000 rwf</p>
               </div>
-              <div className="left2">
+              <div className="left1-row">
+                <p style={{ fontWeight: "bold" }}>Amount paid</p>
                 <p style={{ color: "#d2d2d2" }}>300,000 rwf</p>
-                <p style={{ color: "#d2d2d2" }}>300,000 rwf</p>
+              </div>
+              <div className="left1-row">
+                <p style={{ fontWeight: "bold" }}>Remaining</p>
                 <p style={{ color: "#d2d2d2" }}>0 rwf</p>
               </div>
             </div>
+            <div className="p-b-32" />
             <button className='btn btn-light secondary-button body-text fw-900 ' id="generate-button">GENERATE INVOICE</button>
           </div>
           <div className="data-content-right">
             <h6 style={{ color: '#cda84c' }}>ATTACHMENTS</h6>
+            <div className="p-b-32" />
             <div className='attachment'>
               <div className='attachmentGrid'>
                 <div className='attachmentList'>

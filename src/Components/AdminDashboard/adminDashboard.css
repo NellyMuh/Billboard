@@ -1,7 +1,44 @@
 .admin-container{
-        background-color: white;
-        color: black;
-        padding: 32px;
-        margin: 32px;
-        border-radius: 10px;
-    }
+    background-color: white;
+    color: black;
+    padding: 32px;
+    margin: 32px;
+    border-radius: 10px;
+}
+
+.top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.data-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left1{
+    display: grid;
+    grid-auto-rows: auto;
+}
+
+.left1-row{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 32px;
+    justify-items: flex-start;
+}
+
+.p-b-16{
+  padding-bottom: 16px;
+}
+
+.p-b-32{
+  padding-bottom: 32px;
+}
+
+.top-right{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 32px;
+}

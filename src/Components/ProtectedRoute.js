@@ -5,8 +5,8 @@ import store from '../redux/store';
 
 export default ({ component: Component, ...rest }) => {
 	const state = store.getState();
-	const isAuthenticated = true;
-    // const isAuthenticated = state.authReducers.account != null ? true : false;
+	// const isAuthenticated = true;
+    const isAuthenticated = state.authReducers.account != null ? true : false;
 	console.log(state);
 	const history = createBrowserHistory({
 		forceRefresh: true,

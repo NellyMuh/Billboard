@@ -5,3 +5,22 @@
     margin: 32px;
     border-radius: 10px;
 }
+
+.td-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 32px;
+}
+
+.on-hover:hover{
+    color: #DEAD3D;
+}
+
+.billboard-top{
+    display: grid;
+    justify-items: end;
+}
+
+.p-b-32{
+    padding-bottom: 32px;
+  }

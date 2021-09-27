@@ -1,12 +1,41 @@
 .signup-container{
-    margin: 70px 180px;
+    min-height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
 }
-#background-image{
-    background-image: url(../../images/kigali.jpg);
-    background-size:cover;
-    /* background-attachment: fixed; */
-    background-repeat: no-repeat;
-    min-height: 125vh;
-    padding: 120px 16px;
 
+.signup-form{
+  padding: 0px 10rem;
+}
+
+.background-image{
+    min-height: 100vh;
+    background-image: url(../../images/kigali-view.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.login-subtitle{
+  color: #DEAD3D;
+  font-size: 28px;
+  text-align: start;
+  font-weight: bold;
+}
+
+.login-title{
+  color: black;
+  font-size: 14px;
+  text-align: start;
+  font-weight: 600;
+}
+
+.p-b-16{
+  padding-bottom: 16px;
+}
+
+.full-width-btn{
+  display: grid;
+  justify-items: stretch;
 }

@@ -1,0 +1,47 @@
+#landing-section1{
+    min-height: 100vh;
+    padding: 32px;
+    background-image: url('../../images/kigali-view.jpeg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+
+    background-color: black;
+
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+
+
+
+}
+
+.landing-subtitle{
+    color: #DEAD3D;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.landing-title{
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.custom-button{
+    background-color: #DEAD3D;
+    color: white;
+    padding: 12px 50px;
+    font-weight: 600;
+}
+
+.center-items{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-row-gap: 32px;
+}

@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 const Billboard = () => {
   return (
     <div className="billboard-container">
+    <div className="billboard-top p-b-32">
+      <Link className="btn primary-button on-hover" id="button">NEW BILLBOARD</Link>
+    </div>
       <table className="table">
         <thead >
           <tr>
@@ -22,21 +25,10 @@ const Billboard = () => {
             <td>Smart Billboard</td>
             <td>Booked</td>
             <td>
-              <Link
-                className="btn btn-primary"
-              >
-                VIEW
-              </Link> <Link
-                className="btn btn-danger"
-                id="button"
-              >
-                DENY
-              </Link> <Link
-                className="btn btn-success"
-                id="button"
-              >
-                GRANT
-              </Link>
+              <div className="td-row">
+                <Link className="btn btn-primary">EDIT</Link>
+                <Link className="btn btn-danger" id="button">DELETE</Link>
+              </div>
             </td>
 
           </tr>
@@ -46,23 +38,11 @@ const Billboard = () => {
             <td>Smart Billboard</td>
             <td>Booked</td>
             <td>
-              <Link
-                className="btn btn-primary"
-              >
-                VIEW
-              </Link> <Link
-                className="btn btn-danger"
-                id="button"
-              >
-                DENY
-              </Link> <Link
-                className="btn btn-success"
-                id="button"
-              >
-                GRANT
-              </Link>
+            <div className="td-row">
+                <Link className="btn btn-primary">EDIT</Link>
+                <Link className="btn btn-danger" id="button">DELETE</Link>
+              </div>
             </td>
-
           </tr>
           <tr>
             <td>#12345</td>
@@ -70,21 +50,10 @@ const Billboard = () => {
             <td>Normal Billboard</td>
             <td>Available</td>
             <td>
-              <Link
-                className="btn btn-primary"
-              >
-                VIEW
-              </Link> <Link
-                className="btn btn-danger"
-                id="button"
-              >
-                DENY
-              </Link> <Link
-                className="btn btn-success"
-                id="button"
-              >
-                GRANT
-              </Link>
+            <div className="td-row">
+                <Link className="btn btn-primary">EDIT</Link>
+                <Link className="btn btn-danger" id="button">DELETE</Link>
+              </div>
             </td>
           </tr>
         </tbody>

@@ -117,7 +117,7 @@ display: flex;
 
     .app-body{
         display: grid;
-        grid-template-rows: 10% auto;
+        grid-template-rows: 80px auto;
     }
 
     .sidebar-main{

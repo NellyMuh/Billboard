@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Landing from './Components/Landing';
+import Landing from './Components/Landing/Landing';
 import Login from './Components/SignIn/Login';
 import ContactPage from './Components/ContactUs/ContactPage';
 import Signup from './Components/SignUp/Signup';
