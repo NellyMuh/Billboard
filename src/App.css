@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* typography */
+
+.heading{
+  font-size: 72px;
+  line-height: 81px;
+  font-weight: bold;
+}
+
+.title{
+  font-size: 56px;
+  line-height: 72px;
+}
+
+.subtitle{
+  font-size: 24px;
+  line-height: calc(24px * 1.5)
+}
+
+.body-text{
+  font-size: 16px;
+  line-height: calc(16px * 1.5)
+}
+
+.caption{
+  font-size: 13px;
+  line-height:calc(13px * 1.5)
+}
+
+
+/* colors */
+
+.black-text{
+color: #000000;
+}
+
+.white-text{
+  color: #ffffff;
+}
+
+.orange-text{
+  color: #E8BF74;
+}
+
+/* background */
+
+.white-background{
+  background-color: #ffffff;
+}
+.black-background{
+  background-color: #000000;
+}
+.gray-background{
+  background-color:#E5E5E5 ;
+}
+.dark-blue-background{
+  background-color:#2B3449;
+  ;
+}
+
+/* dimensions */
+
+.mb-0{
+  margin-bottom: 0;
+}
+
+.mb-16{
+  margin-bottom: 16px;
+}
+
+.mb-32{
+  margin-bottom: 32px;
+}
+
+.mb-64{
+  margin-bottom: 64px;
+}
+
+.mb-72{
+  margin-bottom: 72px;  
+}
+
+/* buttons */
+
+.primary-button{
+  padding: 12px 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: #2B3449;
+  border: 1px solid #2B3449;
+}
+
+.primary-button2{
+
+  padding: 12px 42px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: #55DAFD;
+  border: 1px solid #55DAFD; 
+}
+.secondary-button{
+  padding: 12px 42px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fdba55f1;
+  background-color:transparent;
+  border: 1px solid #fdba55f1;
+}
+
+/* forms */
+
+.my-input{
+border-radius: 5px;
+border: 1px solid #E5E5E5;
+height: 56px;
+font-size: 16px;
+}
+
+.my-textarea{
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  border: none;
+  min-height: 128px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.my-label{
+  font-size: 14px;
+}
+
+/* font-weight */
+
+.fw-300{
+  font-weight: 300;
+}
+
+.fw-400{
+  font-weight: 400;
+}
+
+.fw-700{
+  font-weight: 700;
+}
+
+/*/////////   Landing   /////////*/
+
+.button{
+  padding: 12px 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: #2B3449;
+  border: 1px solid #2B3449;
+  text-decoration: none;
+}
+#landing-section1{
+  min-height: 100vh;
+  padding: 32px 16px;
+  background-image: url("./images/city.jpg");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+}
+.button:hover{
+  color: #2a807b;
+}
+
+/*////////////  Navbar //////////////*/
+.nav-items{
+  display: flex;
+  color: white;
+  justify-content: flex-end;   
+}
+ ul a{
+   color: white;
+  
+ }
+ li {
+   justify-content: space-around;
+   width: 125px;
+   list-style: none;
+ }

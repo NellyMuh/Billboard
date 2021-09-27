@@ -1,0 +1,182 @@
+.contact{
+    overflow-x: hidden;
+    background-color: #fff;
+  }
+  
+  .contact-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    flex-wrap: wrap !important;
+    min-width: 40vw;
+    justify-content: center;
+    
+  }
+  
+  .contact-form {
+    padding: 40px;
+    flex-grow: 1;
+    background-color: white;
+    width: 40vw;
+    height: 100%;
+    order: 2;
+  }
+  
+  .contact-left {
+    order: 1;
+    flex-grow: 1;
+    padding: 70px 10px 30px 100px;
+    background-color: #e5e5e5;
+    min-width: 50vw;
+  }
+  
+  #submit-contact{
+    width: 200px;
+  }
+  .message-button{
+    max-width: 100px;
+    background-color: #2B3449;
+    border: none;
+    /* color: white; */
+    padding: 16px 35px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 40px;
+  }
+  
+  
+  .contact-header1 {
+    font-family: "NobelBook";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3em;
+    color: #2B3449;
+    padding-bottom: 40px;
+  }
+  
+  .contact-header2 {
+    font-family: "NobelBook";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 79px;
+    color: #2B3449;
+    padding-bottom: 40px;
+  }
+  
+  .contact-paragraph {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 28px;
+    color: #000000;
+    padding-bottom: 60px;
+  }
+  
+  .contact-span {
+    padding-bottom: 100px;
+  }
+  
+  .contact-span h3 {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 23px;
+    color: #000;
+  }
+  
+  .contact-span span {
+    font-family: Nobel;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 28px;
+    color: #2B3449;
+  }
+
+  .contact-form .inputBox{
+    position: relative;
+   min-width: 500px;
+   margin-top: 10px;
+    
+}
+
+.contact-form .inputBox input,
+.contact-form .inputBox textarea{
+  width: 70%;
+  padding: 10px 0;
+  font-size: 25px;
+  margin: 5px 0;
+  border: none;
+  border-bottom: 2px solid #2B3449;
+  outline: none;
+  resize: none;
+}
+
+.contact-form .inputBox span{
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 20px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.3s;
+  color: #2B3449;
+}
+
+.contact-form .inputBox input:focus ~ span,
+.contact-form .inputBox input:valid ~ span,
+.contact-form .inputBox textarea:focus ~ span,
+.contact-form .inputBox textarea:valid ~ span
+{
+  color: #2B3449;
+  font-size: 15px;
+  transform: translateY(-20px);
+}
+
+.contact-form .inputBox input[type="submit"]
+{
+  background: #2B3449;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 18px;
+}
+
+ 
+  .social-pages ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: -15px;
+    list-style: none;
+  }
+  
+  .social-pages ul li a:hover{
+    color: #2a807b;
+  }
+  
+  .social-pages ul li a {
+    padding: 0.5rem 0.5rem;
+    color: #2B3449;
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: #2B3449;
+}
+
+a:hover{
+  color: #2a807b;
+}
+.contact-form .inputBox input[type="submit"]:hover{
+  color: #2a807b;
+}
+
