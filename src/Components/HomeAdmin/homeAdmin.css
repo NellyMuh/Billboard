@@ -43,3 +43,43 @@
     margin: 32px;
     border-radius: 10px;
 }
+
+
+.primary-button{
+    padding: 12px 50px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: #2B3449;
+    border: 1px solid #2B3449;
+  }
+  .primary-button:hover{
+    color: #2a807b;
+}
+  .secondary-button{
+    padding: 12px 42px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+    background-color:rgba(255, 8, 0, 0.664);
+    border: 1px solid rgba(255, 8, 0, 0.664);
+    margin-right: 10px;
+  }
+  .secondary-button:hover{
+      color:white;
+      
+  }
+
+  .tertiary-button{
+    padding: 12px 42px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+    background-color:rgba(3, 95, 11, 0.664);
+    border: 1px solid rgba(3, 95, 11, 0.664);
+    margin-right: 10px;
+  }
+  .tertiary-button:hover{
+      color:white;
+      
+  }

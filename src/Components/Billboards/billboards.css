@@ -12,9 +12,6 @@
     grid-column-gap: 32px;
 }
 
-.on-hover:hover{
-    color: #DEAD3D;
-}
 
 .billboard-top{
     display: grid;

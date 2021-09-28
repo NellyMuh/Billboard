@@ -30,7 +30,7 @@ const ViewBillboard = (props) => {
             <td>{item.price} RWF</td>
             <td>
               <Link
-                className="btn btn-primary"
+                className="btn tertiary-button"
                 id="button"
                 to={`/app/RequestBillboard/${item.id}`}
               >

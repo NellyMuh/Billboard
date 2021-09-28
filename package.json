@@ -8,11 +8,16 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.4",
     "bootstrap": "^5.0.2",
+<<<<<<< HEAD
     "firebase": "^9.1.0",
+=======
+    "chart.js": "^3.5.1",
+>>>>>>> 831d5bb (chart and css buttons change)
     "font-awesome": "^4.7.0",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
+    "react-chartjs-2": "^3.0.5",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-redux-firebase": "^3.10.0",
