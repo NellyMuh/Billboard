@@ -8,6 +8,7 @@ import AdminDashboard from '../Components/AdminDashboard/AdminDashboard';
 import HomeAdmin from '../Components/HomeAdmin/HomeAdmin';
 import RequestBillboardView from '../Components/RequestBillboardView/RequestBillboardView';
 import { connect } from 'react-redux';
+import EditBillboard from '../Components/EditBillboard/EditBillboard';
 
 function DefaultLayout(props) {
     return (
@@ -45,6 +46,7 @@ function DefaultLayout(props) {
                         <Route path="/app/applications" exact component={HomeAdmin} />
                         <Route path="/app/applicationDetails" exact component={AdminDashboard} />
                         <Route path="/app/billboards" exact component={Billboard} />
+                        <Route path="/app/billboards/:id" exact component={EditBillboard} />
                         <Route path="/app/RequestBillboardView" exact component={RequestBillboardView} />
                         <Route path="/app/newbillboard" exact component={NewBillboard} />
                         <Route path="/app/ViewBillboard" exact component={ViewBillboard} />

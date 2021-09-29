@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./billboards.css";
 import { Link } from "react-router-dom";
-import { getBillboardAction } from '../../redux/actions/billboard_actions';
+import { getBillboardAction, deleteBillboardAction, updateBillboardAction } from '../../redux/actions/billboard_actions';
 import { connect } from 'react-redux';
 
 const Billboard = (props) => {
@@ -19,20 +19,24 @@ const Billboard = (props) => {
             <th>BILLBOARD ID</th>
             <th>LOCATION</th>
             <th>TYPE</th>
+            <th>PRICE</th>
             <th>STATUS</th>
             <th>ACTION</th>
           </tr>
         </thead>
         <tbody>
           {props.billboards.map(item => (<tr>
-            <td>#12345</td>
+            <td>#{item.number}</td>
             <td>{item.location}</td>
-            <td>Smart Billboard</td>
-            <td>Booked</td>
+            <td>{item.type}</td>
+            <td>{item.price} RWF</td>
+            <td>{item.status}</td>
             <td>
               <div className="td-row">
-                <button className="btn btn-primary">EDIT</button>
-                <button className="btn btn-danger" id="button">DELETE</button>
+                <Link to={`/app/billboards/${item.id}`} className="btn btn-primary">EDIT</Link>
+                <button onClick={()=>{
+                  props.deleteBillboardAction(item.id);
+                }} className="btn btn-danger" id="button">DELETE</button>
               </div>
             </td>
           </tr>))}
@@ -48,4 +52,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { getBillboardAction })(Billboard);
+export default connect(mapStateToProps, { getBillboardAction, deleteBillboardAction, updateBillboardAction })(Billboard);
