@@ -24,13 +24,13 @@ const HomeAdmin = () => {
             <td>From: 28 Feb 2021 To: 28 May 2021</td>
             <td>PENDING</td>
             <td>
-              <Link className="btn btn-primary">VIEW</Link>{""}
-              <Link className="btn btn-danger" id="button">
+              <button className="btn btn-primary">VIEW</button>{""}
+              <button className="btn btn-danger" id="button">
                 DENY
-              </Link>{" "}
-              <Link className="btn btn-success" id="button">
+              </button>{" "}
+              <button className="btn btn-success" id="button">
                 GRANT
-              </Link>
+              </button>
             </td>
           </tr>
           <tr>
@@ -40,13 +40,13 @@ const HomeAdmin = () => {
             <td>From: 28 Feb 2021 To: 28 May 2021</td>
             <td>PENDING</td>
             <td>
-              <Link className="btn btn-primary">VIEW</Link>{" "}
-              <Link className="btn btn-danger" id="button">
+              <button className="btn btn-primary">VIEW</button>{" "}
+              <button className="btn btn-danger" id="button">
                 DENY
-              </Link>{" "}
-              <Link className="btn btn-success" id="button">
+              </button>{" "}
+              <button className="btn btn-success" id="button">
                 GRANT
-              </Link>
+              </button>
             </td>
           </tr>
           <tr>
@@ -56,13 +56,13 @@ const HomeAdmin = () => {
             <td>From: 28 Feb 2021 To: 28 May 2021</td>
             <td>PENDING</td>
             <td>
-              <Link className="btn btn-primary">VIEW</Link>{" "}
-              <Link className="btn btn-danger" id="button">
+              <button className="btn btn-primary">VIEW</button>{" "}
+              <button className="btn btn-danger" id="button">
                 DENY
-              </Link>{" "}
-              <Link className="btn btn-success" id="button">
+              </button>{" "}
+              <button className="btn btn-success" id="button">
                 GRANT
-              </Link>
+              </button>
             </td>
           </tr>
           <tr>
@@ -72,13 +72,13 @@ const HomeAdmin = () => {
             <td>From: 28 Feb 2021 To: 28 May 2021</td>
             <td>PENDING</td>
             <td>
-              <Link className="btn btn-primary">VIEW</Link>{" "}
-              <Link className="btn btn-danger" id="button">
+              <button className="btn btn-primary">VIEW</button>{" "}
+              <button className="btn btn-danger" id="button">
                 DENY
-              </Link>{" "}
-              <Link className="btn btn-success" id="button">
+              </button>{" "}
+              <button className="btn btn-success" id="button">
                 GRANT
-              </Link>
+              </button>
             </td>
           </tr>
           <tr>
@@ -88,13 +88,13 @@ const HomeAdmin = () => {
             <td>From: 28 Feb 2021 To: 28 May 2021</td>
             <td>PENDING</td>
             <td>
-              <Link className="btn btn-primary">VIEW</Link>{" "}
-              <Link className="btn btn-danger" id="button">
+              <button className="btn btn-primary">VIEW</button>{" "}
+              <button className="btn btn-danger" id="button">
                 DENY
-              </Link>{" "}
-              <Link className="btn btn-success" id="button">
+              </button>{" "}
+              <button className="btn btn-success" id="button">
                 GRANT
-              </Link>
+              </button>
             </td>
           </tr>
           <tr>
@@ -104,13 +104,13 @@ const HomeAdmin = () => {
             <td>From: 28 Feb 2021 To: 28 May 2021</td>
             <td>PENDING</td>
             <td>
-              <Link className="btn btn-primary">VIEW</Link>{" "}
-              <Link className="btn btn-danger" id="button">
+              <button className="btn btn-primary">VIEW</button>{" "}
+              <button className="btn btn-danger" id="button">
                 DENY
-              </Link>{" "}
-              <Link className="btn btn-success" id="button">
+              </button>{" "}
+              <button className="btn btn-success" id="button">
                 GRANT
-              </Link>
+              </button>
             </td>
           </tr>
         </tbody>

@@ -1,14 +1,14 @@
 
-const authReducers = (state = {account: null}, action) => {
+const authReducers = (state = {user: null}, action) => {
     switch (action.type) {
         case "SIGNUP_ACTION":{
             const tempState = state;
-            tempState.account = action.payload;
+            tempState.user = action.payload;
             return tempState;
         }
         case "SIGNIN_ACTION": {
             const tempState = state;
-            tempState.account = action.payload;
+            tempState.user = action.payload;
             return tempState;
         }
         default:

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./newBillboard.css";
+import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
+import { newBillboardAction } from '../../redux/actions/billboard_actions';
 
-const NewBillboard = () => {
+const NewBillboard = (props) => {
+  const [location, setLocation] = useState('');
+  const [type, setType] = useState('');
+  const [price, setPrice] = useState('');
+  const [dimensions, setDimensions] = useState('');
+  const history = useHistory();
   return (
     <div className="newBillboard-container">
       <div className="container-newBillboard-home">
@@ -18,9 +26,12 @@ const NewBillboard = () => {
                   type="text"
                   className="form-control my-input"
                   placeholder="Location"
+                  onChange={(e) => {
+                    setLocation(e.target.value);
+                  }}
                 />
               </div>
-              <div className="form-group mb-64 fw-700">
+              <div className="form-group mb-16 fw-700">
                 <label className="my-label" for="billboard type">
                   Billboard Type
                 </label>
@@ -29,11 +40,44 @@ const NewBillboard = () => {
                   type="text"
                   className="form-control my-input"
                   placeholder="Type"
+                  onChange={(e) => {
+                    setType(e.target.value);
+                  }}
                 />
               </div>
-              
+              <div className="form-group mb-16 fw-700">
+                <label className="my-label" for="billboard type">
+                  Dimensions
+                </label>
+                <input
+                  id="billboard type"
+                  type="text"
+                  className="form-control my-input"
+                  placeholder="Dimensions"
+                  onChange={(e) => {
+                    setDimensions(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="form-group mb-64 fw-700">
+                <label className="my-label" for="billboard type">
+                  Price
+                </label>
+                <input
+                  id="billboard type"
+                  type="text"
+                  className="form-control my-input"
+                  placeholder="Price"
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                />
+              </div>
               <div className="form-group">
-                <button className="btn primary-button mr-5">
+                <button onClick={async () => {
+                  await props.newBillboardAction(location, type, price, dimensions);
+                  history.goBack();
+                }} className="btn primary-button mr-5">
                   ADD BILLBOARD
                 </button>
               </div>
@@ -45,4 +89,8 @@ const NewBillboard = () => {
   );
 };
 
-export default NewBillboard;
+const mapStateToProps = (state) => {
+  return state;
+}
+
+export default connect(mapStateToProps, { newBillboardAction })(NewBillboard);

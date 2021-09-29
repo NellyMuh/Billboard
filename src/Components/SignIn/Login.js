@@ -3,6 +3,7 @@ import './login.css';
 import { signinAction } from '../../redux/actions/auth_actions';
 import { connect } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
+import store from '../../redux/store';
 
 
 const Login = (props) => {
@@ -31,12 +32,16 @@ const Login = (props) => {
                     </div>
                     <div className="form-group full-width-btn  p-b">
                         <button onClick={async () => {
-                            const isTrue = await props.signinAction(email, password);
-                            if (isTrue && props.account != null) {
-                                if (props.account.user.role.id == 1) {
-                                    history.push('/app/ViewBillboard');
-                                } else {
-                                    history.push('/app/applications');
+                            if (email && password) {
+                                const isTrue = await props.signinAction(email, password);
+                                const state = store.getState();
+                                if (isTrue && state.authReducers.user != null) {
+                                    if (state.authReducers.user.role == 'user') {
+                                        history.push('/app/ViewBillboard');
+                                    } 
+                                    if (state.authReducers.user.role == 'admin') {
+                                        history.push('/app/applications');
+                                    }
                                 }
                             }
                         }} className="btn primary-button signin-button mb-16">LOGIN</button>

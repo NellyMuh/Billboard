@@ -4,7 +4,7 @@ import './signup.css';
 import { signupAction } from '../../redux/actions/auth_actions';
 import { Link, useHistory } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [fname, setFname] = useState('');
@@ -46,7 +46,12 @@ const Signup = () => {
                 </div>
                 <div className="p-b-16" />
                 <div className="form-group full-width-btn">
-                    <button className="btn primary-button signin-button">Register</button>
+                    <button onClick={async () => {
+                        const result = await props.signupAction(email, password, fname, lname, genger, phone, nid);
+                        if (result == true) {
+                            history.push('/login');
+                        }
+                    }} className="btn primary-button signin-button">Register</button>
                 </div>
                 <div className="p-b-16" />
                 <p>have an account?  <Link style={{ fontWeight: 'bold' }} to="/login">LOGIN</Link></p>

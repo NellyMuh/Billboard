@@ -1,9 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import authReducers from './reducers/auth_reducers';
+import billboardReducers from './reducers/billboard_reducers';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-    authReducers
+    authReducers,
+    billboardReducers
 });
 
 const middleware = [thunk];

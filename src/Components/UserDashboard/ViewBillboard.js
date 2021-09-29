@@ -35,12 +35,12 @@ const ViewBillboard = () => {
             <td>Gishushu</td>
             <td>Smart Billboard</td>
             <td>
-              <Link
+              <button
                 className="btn btn-primary"
                 id="button"
               >
                 REQUEST BILLBOARD
-              </Link>
+              </button>
             </td>
 
           </tr>
@@ -49,12 +49,12 @@ const ViewBillboard = () => {
             <td>Gishushu</td>
             <td>Smart Billboard</td>
             <td>
-              <Link
+              <button
                 className="btn btn-primary"
                 id="button"
               >
                 REQUEST BILLBOARD
-              </Link>
+              </button>
             </td>
           </tr>
         </tbody>

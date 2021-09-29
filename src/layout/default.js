@@ -9,29 +9,12 @@ import HomeAdmin from '../Components/HomeAdmin/HomeAdmin';
 import RequestBillboardView from '../Components/RequestBillboardView/RequestBillboardView';
 import { connect } from 'react-redux';
 
-// Admin
-// - billboard
-// -newbillboard
-// -admin (admindashboard)
-// -homeadmin
-// -viewBillboard
-// -applications
-// -report
-
-// Users
-// -viewBillboard
-// -RequestBillboard
-// -billboard
-// -MyApplications
-// -
-// -
-
 function DefaultLayout(props) {
     return (
         <div className="default-container">
-            <div className="sidebar-main" style={{backgroundColor: props.account.user.role.id == 1 ? "#DEAD3D" : "#2c3b63"}}>
-                <h2 style={{ paddingBottom: 32, paddingTop: 32, paddingLeft: 32 }} className="orange-text">KIGALI CITY</h2>
-                {props.account.user.role.id == 1 ? <ul>
+            <div className="sidebar-main" style={{ backgroundColor: props.user.role == "user" ? "#DEAD3D" : "#2c3b63" }}>
+                <h2 style={{ paddingBottom: 32, paddingTop: 32, paddingLeft: 32, color: props.user.role == "user" ? "white" : "#DEAD3D" }}>KIGALI CITY</h2>
+                {props.user.role == "user" ? <ul>
                     <li style={{ paddingBottom: 16, paddingTop: 16, color: "white" }}>
                         <Link to="/app/ViewBillboard">BILLBOARDS</Link>
                     </li>
@@ -39,7 +22,7 @@ function DefaultLayout(props) {
                         <Link to="/app/MyApplications">MY APPLICATIONS</Link>
                     </li>
                 </ul> : <ul>
-                <li style={{ paddingBottom: 16, paddingTop: 16, color: "white" }}>
+                    <li style={{ paddingBottom: 16, paddingTop: 16, color: "white" }}>
                         <Link to="/app/applications">APPLICATIONS</Link>
                     </li>
                     <li style={{ paddingBottom: 16, paddingTop: 16, color: "white" }}>
@@ -58,17 +41,15 @@ function DefaultLayout(props) {
                     </div>
                 </div>
                 <div className="container-home">
-                    <Router>
-                        <Switch>
-                            <Route path="/app/applications" exact component={HomeAdmin} />
-                            <Route path="/app/applicationDetails" exact component={AdminDashboard} />
-                            <Route path="/app/billboards" exact component={Billboard} />
-                            <Route path="/app/RequestBillboardView" exact component={RequestBillboardView} />
-                            <Route path="/app/newbillboard" exact component={NewBillboard} />
-                            <Route path="/app/ViewBillboard" exact component={ViewBillboard} />
-                            <Route path="/app/RequestBillboard" exact component={RequestBillboard} />
-                        </Switch>
-                    </Router>
+                    <Switch>
+                        <Route path="/app/applications" exact component={HomeAdmin} />
+                        <Route path="/app/applicationDetails" exact component={AdminDashboard} />
+                        <Route path="/app/billboards" exact component={Billboard} />
+                        <Route path="/app/RequestBillboardView" exact component={RequestBillboardView} />
+                        <Route path="/app/newbillboard" exact component={NewBillboard} />
+                        <Route path="/app/ViewBillboard" exact component={ViewBillboard} />
+                        <Route path="/app/RequestBillboard" exact component={RequestBillboard} />
+                    </Switch>
                 </div>
             </div>
         </div>
@@ -77,7 +58,7 @@ function DefaultLayout(props) {
 
 const mapStateToProps = (state) => {
     return {
-        account: state.authReducers.account
+        user: state.authReducers.user
     };
 }
 
