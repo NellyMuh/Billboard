@@ -1,13 +1,15 @@
 import React from "react";
 import "./RequestBillboardView.css";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
-const RequestBillboardView = () => {
+const RequestBillboardView = (props) => {
+  const applications = props.applications.filter(item => item.id == props.match.params.id)[0];
   return (
     <div className="requestBillboard-container">
       <div className="container-requestBillboard-home">
         <div className="billboard-form">
-          <h1 className="orange-text subitle">Request Billboard</h1>
+          <h1 className="orange-text subitle">Requested Billboard</h1>
           <div className="form_row">
             <div className="form_col-1">
               <div className="form-group mb-16 fw-700">
@@ -17,19 +19,21 @@ const RequestBillboardView = () => {
                 <input
                   id="fname"
                   type="text"
+                  value={applications.fname}
                   className="form-control my-input"
                   placeholder="first name"
                 />
               </div>
               <div className="form-group mb-16 fw-700">
-                <label className="my-label" for="  ID number">
+                <label className="my-label" for="ID number">
                   ID number
                 </label>
                 <input
                   id="ID number"
                   type="text"
+                  value={applications.nid}
                   className="form-control my-input"
-                  placeholder="  ID number"
+                  placeholder="ID number"
                 />
               </div>
               <div className="form-group mb-16 fw-700">
@@ -39,19 +43,9 @@ const RequestBillboardView = () => {
                 <input
                   id="Organization"
                   type="text"
+                  value={applications.organization}
                   className="form-control my-input"
                   placeholder="Organization"
-                />
-              </div>
-              <div className="form-group mb-16 fw-700">
-                <label className="my-label" for="District">
-                  District
-                </label>
-                <input
-                  id="District"
-                  type="text"
-                  className="form-control my-input"
-                  placeholder="District"
                 />
               </div>
               <div className="form-group mb-16 fw-700">
@@ -61,6 +55,7 @@ const RequestBillboardView = () => {
                 <input
                   id="From"
                   type="text"
+                  value={applications.from}
                   className="form-control my-input"
                   placeholder="From"
                 />
@@ -74,6 +69,7 @@ const RequestBillboardView = () => {
                 <input
                   id="lname"
                   type="text"
+                  value={applications.laname}
                   className="form-control my-input"
                   placeholder="Last name"
                 />
@@ -85,6 +81,7 @@ const RequestBillboardView = () => {
                 <input
                   id="Phone number"
                   type="text"
+                  value={applications.phone}
                   className="form-control my-input"
                   placeholder="Phone number"
                 />
@@ -96,19 +93,9 @@ const RequestBillboardView = () => {
                 <input
                   id="Organization TIN"
                   type="text"
+                  value={applications.tin}
                   className="form-control my-input"
                   placeholder="Organization TIN"
-                />
-              </div>
-              <div className="form-group mb-16 fw-700">
-                <label className="my-label" for="Sector">
-                  Sector
-                </label>
-                <input
-                  id="Sector"
-                  type="text"
-                  className="form-control my-input"
-                  placeholder="Sector"
                 />
               </div>
               <div className="form-group mb-32 fw-700">
@@ -118,6 +105,7 @@ const RequestBillboardView = () => {
                 <input
                   id="To"
                   type="text"
+                  value={applications.to}
                   className="form-control my-input"
                   placeholder="To"
                 />
@@ -130,31 +118,33 @@ const RequestBillboardView = () => {
       <div className="p-b-32" />
       <div className='attachment'>
         <div className='attachmentGrid'>
-          <div className='attachmentList'>
-            <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
-            <p>Attachment 1</p>
-          </div>
-          <div className='attachmentList'>
-            <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
-            <p>Attachment 2</p>
-          </div>
-          <div className='attachmentList'>
-            <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
-            <p>Attachment 3</p>
-          </div>
+        {
+            applications.docs.map(doc => (<a target="_blank" href={doc.url}><div className='attachmentList'>
+              <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
+              <p>{doc.name}</p>
+            </div></a>))
+          }
         </div>
       </div>
       <div className="buttons">
         <div></div>
         <div></div>
-        <div className="form-group full-width-btn">
+        {
+          applications.isConfirmed ? (<div className="form-group full-width-btn">
           <button className="btn primary-button mr-5 fw-700">
             PROCEED TO PAY
           </button>
-        </div>
+        </div>) : <h5>WAITING CONFIRMATION</h5>
+        }
       </div>
     </div>
   );
 };
 
-export default RequestBillboardView;
+const mapStateToProps = (state) => {
+  return {
+    applications: state.applicationsReducers.applications
+  };
+}
+
+export default connect(mapStateToProps, {})(RequestBillboardView);

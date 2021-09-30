@@ -1,149 +1,41 @@
-/* .primary-button{
-    padding: 12px 50px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: white;
-    background-color: #2B3449;
-    border: 1px solid #2B3449;
-  }
-  .primary-button:hover{
-    color: #2a807b;
+
+.default-container{
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: 20% auto;
 }
-  .secondary-button{
-    padding: 12px 42px;
-    border-radius: 5px;
-    font-size: 14px;
-    color: black;
-    background-color:transparent;
-    border: 1px solid gray;
-    margin-right: 10px;
-  }
-  .secondary-button:hover{
-      color:#2a807b;
-  }
-
-  .orange-text{
-    color: #E8BF74;
-  }
-  .body-text{
-    font-size: 16px;
-    line-height: calc(16px * 1.5)
-  }
-  .fw-900{
-    font-weight: 900;
-  }
-
-
-.billboard-container{
-    background-color: lightgrey;
-    height: 100vh;
+.app-body{
+    display: grid;
+    grid-template-rows: 80px auto;
 }
-.billboard-sidebar{
+.sidebar-main{
     background-color: #2c3b63;
-    width: 13%;
     height: 100vh;
-    padding: 30px;
-    color: white;
 }
-
-
-.container-billboard-home{
+.navbar-main{
+    display: grid;
+    grid-template-columns: auto 25%;
+    align-items: center;
+    justify-items: center;
     background-color: white;
-    width: 80%;
     color: black;
-    height: 80vh;
-    position: relative;
-    left: 270px;
-    bottom: 720px;
-    padding: 50px;
-    border-radius: 10px;
-}
-#headers{
-    font-weight: bold;
-}
-.searchPart{
-    position: relative;
-    left: 1rem;
-    bottom: 8px;
 }
 
-#searchField{
-    width: 400px;
-    border-radius: 10px;
-}
-.data-content{
-    display: flex;
-    flex-direction: row;
-}
-.data-content-left{
-    flex: 1;
-    border-right: 0.5px solid black;
-    height: 55vh;
-    bottom: 200rem;
-    flex-direction: row;
-}
-.left{
-display: flex;
-}
-.left1{
-    flex: 1;
-}
-.left2{
-    flex: 1.2;
-}
-.data-content-right{
-    flex: 1.9;
-    position: relative;
-    left: 100px;
+.navbar-right-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 32px;
+    align-items: center;
 }
 
-.top{
-    display: flex;
-    flex-direction: row;
-    }
-    .top-left{
-        flex: 1;
-    }
-    .top-right{
-        flex: 1.2;
-    } */
+.logout{
+    border: red 1px solid;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-align: center;
+}
 
-
-    .default-container{
-        background-color: lightgray;
-        display: grid;
-        grid-template-columns: 20% auto;
-    }
-
-    .app-body{
-        display: grid;
-        grid-template-rows: 80px auto;
-    }
-
-    .sidebar-main{
-        background-color: #2c3b63;
-        height: 100vh;
-    }
-
-    .navbar-main{
-        display: grid;
-        grid-template-columns: auto 20%;
-        align-items: center;
-        justify-items: center;
-        background-color: white;
-        color: black;
-    }
-    .navbar-left{
-        /* position: relative;
-        left: 40rem;
-        bottom: 38px; */
-    }
-    #bell-icon-home{
-        /* position: relative; */
-        /* top: 36px;
-        right: 40px; */
-    }
-    .navbar-right{
-        /* position: relative;
-        left: 40rem; */
-    }
+.logout:hover{
+    color: white;
+    background-color: red;
+}

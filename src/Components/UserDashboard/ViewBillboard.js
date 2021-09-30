@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ViewBillboards.css";
 import { Link } from "react-router-dom";
+import { getBillboardAction } from '../../redux/actions/billboard_actions';
+import { connect } from 'react-redux';
 
-const ViewBillboard = () => {
+const ViewBillboard = (props) => {
+  useEffect(()=>{
+    props.getBillboardAction();
+  },[]);
   return (
     <div className="viewBillboard-container">
       <table className="table">
@@ -10,57 +15,39 @@ const ViewBillboard = () => {
           <tr>
             <th>BILLBOARD ID</th>
             <th>LOCATION</th>
+            <th>DIMENSION</th>
             <th>TYPE</th>
+            <th>PRICE</th>
             <th>ACTION</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>#12345</td>
-            <td>Gishushu</td>
-            <td>Smart Billboard</td>
+        {props.billboards.map(item => (<tr>
+            <td>#{item.number}</td>
+            <td>{item.location}</td>
+            <td>{item.dimensions}</td>
+            <td>{item.type}</td>
+            <td>{item.price} RWF</td>
             <td>
               <Link
-                className="btn btn-primary"
+                className="btn tertiary-button"
                 id="button"
-                to=""
+                to={`/app/RequestBillboard/${item.id}`}
               >
                 REQUEST BILLBOARD
               </Link>
             </td>
-
-          </tr>
-          <tr>
-            <td>#12345</td>
-            <td>Gishushu</td>
-            <td>Smart Billboard</td>
-            <td>
-              <button
-                className="btn btn-primary"
-                id="button"
-              >
-                REQUEST BILLBOARD
-              </button>
-            </td>
-
-          </tr>
-          <tr>
-            <td>#12345</td>
-            <td>Gishushu</td>
-            <td>Smart Billboard</td>
-            <td>
-              <button
-                className="btn btn-primary"
-                id="button"
-              >
-                REQUEST BILLBOARD
-              </button>
-            </td>
-          </tr>
+          </tr>))}
         </tbody>
       </table>
     </div>
   );
 };
 
-export default ViewBillboard;
+const mapStateToProps = (state) => {
+  return {
+    billboards: state.billboardReducers.billboards
+  };
+}
+
+export default connect(mapStateToProps, { getBillboardAction })(ViewBillboard);

@@ -11,7 +11,7 @@ const Billboard = (props) => {
   return (
     <div className="billboard-container">
     <div className="billboard-top p-b-32">
-      <Link to="/app/newbillboard" className="btn primary-button on-hover" id="button">NEW BILLBOARD</Link>
+      <Link to="/app/newbillboard" className="btn primary-button" id="button">NEW BILLBOARD</Link>
     </div>
       <table className="table">
         <thead >

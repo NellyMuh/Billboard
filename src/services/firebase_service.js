@@ -58,3 +58,12 @@ export const deleteBillboard = (id) => {
 export const updateBillboard = (id, data) => {
     return db.collection('billboards').doc(id).update(data);
 }
+export const getMyApplications = async (uid) => {
+    const docs = await db.collection('applications').where("uid", "==", uid).get();
+    return docs.docs.map(item => item.data());
+}
+
+export const getApplications = async () => {
+    const docs = await db.collection('applications').get();
+    return docs.docs.map(item => item.data());
+}

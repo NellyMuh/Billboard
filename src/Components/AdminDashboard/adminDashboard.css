@@ -42,3 +42,17 @@
     align-items: center;
     grid-column-gap: 32px;
 }
+
+.fourth-button{
+    padding: 12px 42px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+    background-color:transparent;
+    border: 1px solid #000000;
+    margin-right: 10px;
+  }
+  .fourth-button:hover{
+      color: #129b66;
+      border: 1px solid #129b66;
+}
