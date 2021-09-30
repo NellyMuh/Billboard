@@ -16,7 +16,7 @@ const NewBillboard = (props) => {
         <div className="row">
           <div className="col-sm-7 mb-16">
             <div className="billboard-form">
-              <h1 className="orange-text subitle">New Billboard</h1>
+              <h1 className="subitle">New Billboard</h1>
               <div className="form-group mb-16 fw-700">
                 <label className="my-label" for="location">
                   Location

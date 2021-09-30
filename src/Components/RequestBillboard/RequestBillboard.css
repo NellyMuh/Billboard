@@ -1,24 +1,37 @@
+.requestBillboard-container {
+  background-color: white;
+  color: black;
+  padding: 16px 32px;
+  margin: 16px 32px;
+  border-radius: 10px;
+}
 
-    .requestBillboard-container{
-        background-color: white;
-        color: black;
-        padding: 16px 32px;
-        margin: 16px 32px;
-        border-radius: 10px;
-    }
+.billboard-form {
+  display: grid;
+  grid-template-rows: 5rem auto;
+}
 
-    .billboard-form{
-        display: grid;
-        grid-template-rows: 5rem auto;
-    }
+.form_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 32px;
+}
 
-    .form_row{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 32px;
-    }
+.buttons {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
 
-    .buttons{
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-    }
+.upload-button {
+  padding: 12px 42px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #000000;
+  background-color: transparent;
+  border: 1px solid #fdba55f1;
+}
+
+.upload-button:hover{
+    color: white;
+    background-color:#fdba55f1 ;
+}

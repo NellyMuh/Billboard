@@ -148,7 +148,7 @@ const RequestBillboard = (props) => {
             setDocuments(docs);
             setCount(docs.length);
           }} type="file" id="upload" hidden />
-          <label className="btn btn-light secondary-button body-text mr-5 fw-700 mb-32" for="upload">UPLOAD DOCUMENTS {count}</label>
+          <label className="btn upload-button body-text mr-5 fw-700 mb-32" for="upload">UPLOAD DOCUMENTS {count}</label>
         </div>
         <div className="form-group">
           <button onClick={() => {
