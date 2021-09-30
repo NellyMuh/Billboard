@@ -8,6 +8,7 @@ import AdminDashboard from '../Components/AdminDashboard/AdminDashboard';
 import HomeAdmin from '../Components/HomeAdmin/HomeAdmin';
 import RequestBillboardView from '../Components/RequestBillboardView/RequestBillboardView';
 import { connect } from 'react-redux';
+import MyApplications from '../Components/MyApplications/MyApplications';
 
 function DefaultLayout(props) {
     return (
@@ -37,18 +38,20 @@ function DefaultLayout(props) {
                 <div className="navbar-main">
                     <div />
                     <div className='navbar-right-main'>
-                        <p style={{ margin: 0 }}>Nelly Tweedy</p>
+                        <p style={{ margin: 0, fontWeight: 'bolder' }}>{`${props.user.fname} ${props.user.lname}`}</p>
+                        <Link className="logout" to="/login">LOGOUT</Link>
                     </div>
                 </div>
                 <div className="container-home">
                     <Switch>
                         <Route path="/app/applications" exact component={HomeAdmin} />
-                        <Route path="/app/applicationDetails" exact component={AdminDashboard} />
+                        <Route path="/app/MyApplications" exact component={MyApplications} />
+                        <Route path="/app/applicationDetails/:id" exact component={AdminDashboard} />
                         <Route path="/app/billboards" exact component={Billboard} />
-                        <Route path="/app/RequestBillboardView" exact component={RequestBillboardView} />
+                        <Route path="/app/RequestBillboardView/:id" exact component={RequestBillboardView} />
                         <Route path="/app/newbillboard" exact component={NewBillboard} />
                         <Route path="/app/ViewBillboard" exact component={ViewBillboard} />
-                        <Route path="/app/RequestBillboard" exact component={RequestBillboard} />
+                        <Route path="/app/RequestBillboard/:id" exact component={RequestBillboard} />
                     </Switch>
                 </div>
             </div>

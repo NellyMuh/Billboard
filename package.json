@@ -10,6 +10,7 @@
     "bootstrap": "^5.0.2",
     "firebase": "^9.1.0",
     "font-awesome": "^4.7.0",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
@@ -21,6 +22,7 @@
     "redux-thunk": "^2.3.0",
     "router-dom": "^2.2.3",
     "styled-components": "^5.3.0",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

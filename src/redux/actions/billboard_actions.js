@@ -17,5 +17,4 @@ export const getBillboardAction = () => async dispatch => {
     dispatch({ type: 'SET_BILLBOARDS_ACTION', payload: response });
     dispatch({ type: 'LOADING', payload: false });
     return true;
-    return false;
 }

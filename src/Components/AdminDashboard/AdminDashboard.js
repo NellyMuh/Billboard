@@ -1,23 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./adminDashboard.css";
+import { connect } from 'react-redux';
+import { db } from '../../firebase.config';
 
-const AdminDashboard = () => {
+const AdminDashboard = (props) => {
+  const application = props.applications.filter(item => item.id == props.match.params.id)[0];
+  const [isConfirmed, setIsConfirmed] = useState(application.isConfirmed);
+  const [status, setStatus] = useState(application.status);
   return (
     <div className="admin-container">
       <div className="data-container">
         <div className='top'>
           <div className='top-left'>
-            <h3 className="fw-900">Inyange Industries</h3>
-            <h5 style={{ color: "lightgrey" }}>TIN: 32621565220</h5>
+            <h3 className="fw-900">{application.organisation}</h3>
+            <h5 style={{ color: "lightgrey" }}>TIN: {application.tin}</h5>
           </div>
           <div className='top-right'>
-            <button className="btn primary-button fw-900" style={{ float: "right" }}>
-              GRANT PERMISSION
-            </button>{" "}
-            <button className="btn secondary-button fw-900" style={{ float: "right" }}>
-              {" "}
-              DENY PERMISSION
-            </button>
+            {
+              application.isPaid ? (<>
+                <button onClick={() => {
+                  db.collection("applications").doc(application.id).update({ status: "GRANTED" });
+                  setStatus("GRANTED");
+                }} className="btn primary-button fw-900" style={{ float: "right" }}>
+                  GRANT PERMISSION
+                </button>
+                <button onClick={() => {
+                  db.collection("applications").doc(application.id).update({ status: "DENIED" });
+                  setStatus("DENIED");
+                }} className="btn secondary-button fw-900" style={{ float: "right" }}>
+                  DENY PERMISSION
+                </button>
+              </>) : <>
+                <div></div>
+                <div></div>
+              </>
+            }
           </div>
         </div>
         <div className="p-b-32" />
@@ -28,23 +45,23 @@ const AdminDashboard = () => {
             <div className="left1">
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Billboard Location</p>
-                <p style={{ color: "#d2d2d2" }}>Gishushu</p>
+                <p style={{ color: "#d2d2d2" }}>{application.billboard.location}</p>
               </div>
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Billboard ID</p>
-                <p style={{ color: "#d2d2d2" }}>KG-00012-G</p>
+                <p style={{ color: "#d2d2d2" }}>#{application.billboard.number}</p>
               </div>
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Application Date</p>
-                <p style={{ color: "#d2d2d2" }}>14 Feb 2021</p>
+                <p style={{ color: "#d2d2d2" }}>{application.appliedOn}</p>
               </div>
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Period</p>
-                <p style={{ color: "#d2d2d2" }}>28 Feb 2021 - 28 May 2021</p>
+                <p style={{ color: "#d2d2d2" }}>{application.from} - {application.to}</p>
               </div>
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Application status</p>
-                <p style={{ color: "#d2d2d2" }}>PENDING</p>
+                <p style={{ color: "#d2d2d2" }}>{status}</p>
               </div>
             </div>
             <div className="p-b-32" />
@@ -53,11 +70,11 @@ const AdminDashboard = () => {
             <div className="left1">
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>To be paid</p>
-                <p style={{ color: "#d2d2d2" }}>300,000 rwf</p>
+                <p style={{ color: "#d2d2d2" }}>{application.billboard.price} rwf</p>
               </div>
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Amount paid</p>
-                <p style={{ color: "#d2d2d2" }}>300,000 rwf</p>
+                <p style={{ color: "#d2d2d2" }}>{application.isPaid ? application.billboard.price : 0} rwf</p>
               </div>
               <div className="left1-row">
                 <p style={{ fontWeight: "bold" }}>Remaining</p>
@@ -65,29 +82,22 @@ const AdminDashboard = () => {
               </div>
             </div>
             <div className="p-b-32" />
-            <button className='btn btn-light secondary-button body-text fw-900 ' id="generate-button">GENERATE INVOICE</button>
+            {isConfirmed ? (<div></div>) : <button onClick={() => {
+              db.collection("applications").doc(application.id).update({ isConfirmed: true });
+              setIsConfirmed(true);
+            }} className='btn primary-button body-text fw-900 ' id="generate-button">ACCEPT REQUEST</button>}
           </div>
           <div className="data-content-right">
             <h6 style={{ color: '#cda84c' }}>ATTACHMENTS</h6>
             <div className="p-b-32" />
             <div className='attachment'>
               <div className='attachmentGrid'>
-                <div className='attachmentList'>
-                  <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
-                  <p>Attachment 1</p>
-                </div>
-                <div className='attachmentList'>
-                  <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
-                  <p>Attachment 2</p>
-                </div>
-                <div className='attachmentList'>
-                  <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
-                  <p>Attachment 3</p>
-                </div>
-                <div className='attachmentList'>
-                  <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' className='attachmentImage' />
-                  <p>Attachment 4</p>
-                </div>
+                {
+                  application.docs.map(doc => (<a target="_blank" href={doc.url}><div className='attachmentList'>
+                    <img src='https://thumbs.dreamstime.com/b/abstract-light-grey-background-wallpaper-empty-studio-room-used-display-product-ad-website-template-abstract-light-grey-177088199.jpg' alt="placeholder" className='attachmentImage' />
+                    <p>{doc.name}</p>
+                  </div></a>))
+                }
               </div>
             </div>
           </div>
@@ -97,4 +107,10 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+const mapStateToProps = (state) => {
+  return {
+    applications: state.applicationsReducers.applications
+  };
+}
+
+export default connect(mapStateToProps, {})(AdminDashboard);

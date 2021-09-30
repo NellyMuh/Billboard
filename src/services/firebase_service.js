@@ -48,3 +48,13 @@ export const getBillboard = async () => {
     const docs = await db.collection('billboards').get();
     return docs.docs.map(item => item.data());
 }
+
+export const getMyApplications = async (uid) => {
+    const docs = await db.collection('applications').where("uid", "==", uid).get();
+    return docs.docs.map(item => item.data());
+}
+
+export const getApplications = async () => {
+    const docs = await db.collection('applications').get();
+    return docs.docs.map(item => item.data());
+}
