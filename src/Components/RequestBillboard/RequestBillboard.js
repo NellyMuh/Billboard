@@ -155,7 +155,7 @@ const RequestBillboard = (props) => {
             if (documents.length > 0) {
               const docs = [];
               documents.forEach(doc => {
-                const docName = `${doc.name}-${uuidv4()}`;
+                const docName = `${uuidv4()}-${doc.name}`;
                 storage.ref(`/docs/${docName}`).put(doc).then(d => {
                   storage.ref("docs").child(docName).getDownloadURL().then((url) => {
                     docs.push({url, name: doc.name});
