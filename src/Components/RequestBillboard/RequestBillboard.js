@@ -20,6 +20,7 @@ const RequestBillboard = (props) => {
   const [to, setTo] = useState('');
   const history = useHistory();
   const billboard = props.billboards.filter(item => item.id == props.match.params.id)[0];
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="requestBillboard-container">
       <div className="container-requestBillboard-home">
@@ -148,11 +149,12 @@ const RequestBillboard = (props) => {
             setDocuments(docs);
             setCount(docs.length);
           }} type="file" id="upload" hidden />
-          <label className="btn upload-button body-text mr-5 fw-700 mb-32" for="upload">UPLOAD DOCUMENTS {count}</label>
+          <label className="btn upload-button body-text mr-5 fw-700 mb-32" for="upload">UPLOAD DOCUMENTS ({count})</label>
         </div>
         <div className="form-group">
           <button onClick={() => {
             if (documents.length > 0) {
+              setIsLoading(true);
               const docs = [];
               documents.forEach(doc => {
                 const docName = `${uuidv4()}-${doc.name}`;
@@ -186,10 +188,11 @@ const RequestBillboard = (props) => {
                     }
                   });
                 });
-              })
+              });
+              db.collection("billboards").doc(billboard.id).update({ status: "Booked" });
             }
           }} className="btn primary-button mr-5 fw-700">
-            REQUEST BILLBOARD
+            {isLoading ? (<i style={{color: "white"}} class="fa fa-spinner fa-spin"></i>) : "REQUEST BILLBOARD"}
           </button>
         </div>
       </div>

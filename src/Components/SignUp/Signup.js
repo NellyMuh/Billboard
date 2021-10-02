@@ -12,6 +12,7 @@ const Signup = (props) => {
     const [genger, setGenger] = useState('');
     const [phone, setPhone] = useState('');
     const [nid, setNid] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
     return (
         <div className="signup-container" id="Signup-page">
@@ -47,11 +48,12 @@ const Signup = (props) => {
                 <div className="p-b-16" />
                 <div className="form-group full-width-btn">
                     <button onClick={async () => {
+                        setIsLoading(true);
                         const result = await props.signupAction(email, password, fname, lname, genger, phone, nid);
                         if (result == true) {
                             history.push('/login');
                         }
-                    }} className="btn primary-button signin-button">Register</button>
+                    }} className="btn primary-button signin-button">{isLoading ? (<i style={{color: "white"}} class="fa fa-spinner fa-spin"></i>) : "Register"}</button>
                 </div>
                 <div className="p-b-16" />
                 <p>have an account?  <Link style={{ fontWeight: 'bold' }} to="/login">LOGIN</Link></p>

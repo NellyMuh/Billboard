@@ -11,6 +11,7 @@ const EditBillboard = (props) => {
   const [type, setType] = useState(item == undefined ? "" : item.type);
   const [price, setPrice] = useState(item == undefined ? "" : item.price);
   const [dimensions, setDimensions] = useState(item == undefined ? "" : item.dimensions);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className="newBillboard-container">
@@ -81,10 +82,11 @@ const EditBillboard = (props) => {
               </div>
               <div className="form-group">
                 <button onClick={async () => {
+                  setIsLoading(true);
                   await props.updateBillboardAction(item.id,{location, type, price, dimensions});
                   history.goBack();
                 }} className="btn primary-button mr-5">
-                  UPDATE BILLBOARD
+                  {isLoading ? (<i style={{color: "white"}} class="fa fa-spinner fa-spin"></i>) : "UPDATE BILLBOARD"}
                 </button>
               </div>
             </div>

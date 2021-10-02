@@ -9,6 +9,7 @@ import store from '../../redux/store';
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
 
     return (
@@ -33,6 +34,7 @@ const Login = (props) => {
                     <div className="form-group full-width-btn  p-b">
                         <button onClick={async () => {
                             if (email && password) {
+                                setIsLoading(true);
                                 const isTrue = await props.signinAction(email, password);
                                 const state = store.getState();
                                 if (isTrue && state.authReducers.user != null) {
@@ -44,7 +46,7 @@ const Login = (props) => {
                                     }
                                 }
                             }
-                        }} className="btn primary-button signin-button mb-16">LOGIN</button>
+                        }} className="btn primary-button signin-button mb-16">{isLoading ? (<i style={{color: "white"}} class="fa fa-spinner fa-spin"></i>) : "LOGIN"}</button>
                     </div>
 
                     <p>Don't have an account?  <Link style={{ fontWeight: 'bold' }} to="/signup">SIGN UP HERE</Link></p>
@@ -57,7 +59,8 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        account: state.authReducers.account
+        account: state.authReducers.user,
+        isLoading: state.appReducers.isLoading
     };
 }
 

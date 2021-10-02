@@ -17,7 +17,10 @@ const AdminDashboard = (props) => {
           </div>
           <div className='top-right'>
             {
-              application.isPaid ? (<>
+              application.isPaid ? application.status == "GRANTED" ? <>
+              <h3 style={{color: "green"}}>GRANTED</h3>
+              <div></div>
+              </> : (<>
                 <button onClick={() => {
                   db.collection("applications").doc(application.id).update({ status: "GRANTED" });
                   setStatus("GRANTED");

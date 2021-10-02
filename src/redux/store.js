@@ -3,11 +3,13 @@ import authReducers from './reducers/auth_reducers';
 import billboardReducers from './reducers/billboard_reducers';
 import thunk from 'redux-thunk';
 import applicationsReducers from './reducers/applications_reducers';
+import appReducers from './reducers/app_reducers';
 
 const rootReducer = combineReducers({
     authReducers,
     billboardReducers,
-    applicationsReducers
+    applicationsReducers,
+    appReducers
 });
 
 const middleware = [thunk];

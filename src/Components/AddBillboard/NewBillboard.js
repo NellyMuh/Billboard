@@ -10,6 +10,7 @@ const NewBillboard = (props) => {
   const [price, setPrice] = useState('');
   const [dimensions, setDimensions] = useState('');
   const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="newBillboard-container">
       <div className="container-newBillboard-home">
@@ -75,10 +76,11 @@ const NewBillboard = (props) => {
               </div>
               <div className="form-group">
                 <button onClick={async () => {
+                  setIsLoading(true);
                   await props.newBillboardAction(location, type, price, dimensions);
                   history.goBack();
                 }} className="btn primary-button mr-5">
-                  ADD BILLBOARD
+                  {isLoading ? (<i style={{color: "white"}} class="fa fa-spinner fa-spin"></i>) : "ADD BILLBOARD"}
                 </button>
               </div>
             </div>

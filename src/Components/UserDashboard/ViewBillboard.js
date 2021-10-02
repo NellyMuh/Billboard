@@ -22,7 +22,7 @@ const ViewBillboard = (props) => {
           </tr>
         </thead>
         <tbody>
-        {props.billboards.map(item => (<tr>
+        {props.billboards.filter(item => item.status != "Booked").map(item => (<tr>
             <td>#{item.number}</td>
             <td>{item.location}</td>
             <td>{item.dimensions}</td>
