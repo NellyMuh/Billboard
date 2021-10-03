@@ -9,7 +9,7 @@ const Signup = (props) => {
     const [password, setPassword] = useState('');
     const [fname, setFname] = useState('');
     const [lname, setLname] = useState('');
-    const [gender, setGender] = useState('');
+    const [gender, setGender] = useState('Male');
     const [phone, setPhone] = useState('');
     const [nid, setNid] = useState('');
     const [isLoading, setIsLoading] = useState(false);
