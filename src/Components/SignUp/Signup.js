@@ -9,7 +9,7 @@ const Signup = (props) => {
     const [password, setPassword] = useState('');
     const [fname, setFname] = useState('');
     const [lname, setLname] = useState('');
-    const [genger, setGenger] = useState('');
+    const [gender, setGender] = useState('');
     const [phone, setPhone] = useState('');
     const [nid, setNid] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +28,7 @@ const Signup = (props) => {
                     <input onChange={(e) => { setLname(e.target.value); }} id="lname" type="text" className="form-control my-input" placeholder="Last Name" required="required" />
                     <div className="p-b-16" />
                     <label className="my-label" for="gender">Gender</label>
-                    <select onChange={(e) => { setGenger(e.target.value); }} id="gender" type="text" className="form-control my-input" placeholder="Gender" required="required">
+                    <select onChange={(e) => { setGender(e.target.value); }} id="gender" type="text" className="form-control my-input" placeholder="Gender" required="required">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
@@ -49,7 +49,7 @@ const Signup = (props) => {
                 <div className="form-group full-width-btn">
                     <button onClick={async () => {
                         setIsLoading(true);
-                        const result = await props.signupAction(email, password, fname, lname, genger, phone, nid);
+                        const result = await props.signupAction(email, password, fname, lname, gender, phone, nid);
                         if (result == true) {
                             history.push('/login');
                         }

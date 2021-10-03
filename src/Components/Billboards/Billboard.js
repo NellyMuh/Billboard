@@ -5,7 +5,6 @@ import { getBillboardAction, deleteBillboardAction, updateBillboardAction } from
 import { connect } from 'react-redux';
 
 const Billboard = (props) => {
-  const [isLoading, setIsLoading] = useState(false);
   useEffect(()=>{
     props.getBillboardAction();
   },[]);
@@ -36,9 +35,8 @@ const Billboard = (props) => {
               <div className="td-row">
                 <Link to={`/app/billboards/${item.id}`} className="btn btn-primary">EDIT</Link>
                 <button onClick={async()=>{
-                  setIsLoading(true);
                   await props.deleteBillboardAction(item.id);
-                }} className="btn btn-danger" id="button">{isLoading ? (<i style={{color: "white"}} class="fa fa-spinner fa-spin"></i>) : "DELETE"}</button>
+                }} className="btn btn-danger" id="button">DELETE</button>
               </div>
             </td>
           </tr>))}

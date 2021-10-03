@@ -12,7 +12,7 @@ export const signin = async (email, password) => {
     }
 }
 
-export const signup = async (email, password, fname, lname, genger, phone, nid) => {
+export const signup = async (email, password, fname, lname, gender, phone, nid) => {
     const userCredential = await auth.createUserWithEmailAndPassword(email, password);
     const uid = userCredential.user.uid;
     const doc = db.collection('users').doc(uid);
@@ -21,7 +21,7 @@ export const signup = async (email, password, fname, lname, genger, phone, nid) 
         email,
         fname,
         lname,
-        genger,
+        gender,
         phone,
         nid,
         role: "user"
@@ -65,5 +65,10 @@ export const getMyApplications = async (uid) => {
 
 export const getApplications = async () => {
     const docs = await db.collection('applications').get();
+    return docs.docs.map(item => item.data());
+}
+
+export const getUsers = async () => {
+    const docs = await db.collection('users').get();
     return docs.docs.map(item => item.data());
 }
